@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  solr750:
+    image: solr:7.5.0
+    volumes:
+      - .:/opt/solr/server/solr
+    ports:
+      - 8983:8983
+    working_dir: /opt/solr/server/solr
+    #command: sh -c "./setupssh.sh && solr start -f"
+    command: sh -c "
+              ./setupssh.sh
+              && solr start -f;
+            "
+    environment:
+      SOLR_SSL_ENABLED: "true"
+      SOLR_SSL_KEY_STORE: "etc/solr-ssl.keystore.jks"
+      SOLR_SSL_KEY_STORE_PASSWORD: "secret"
+      SOLR_SSL_TRUST_STORE: "etc/solr-ssl.keystore.jks"
+      SOLR_SSL_TRUST_STORE_PASSWORD: "secret"
+      SOLR_SSL_NEED_CLIENT_AUTH: "false"
+      SOLR_SSL_WANT_CLIENT_AUTH: "false"
+      SOLR_SSL_KEY_STORE_TYPE: "JKS"
+      SOLR_SSL_TRUST_STORE_TYPE: "JKS"

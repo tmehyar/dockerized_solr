@@ -1,12 +1,12 @@
 version: '3.4'
 
 services:
-  solr660:
-    image: solr:6.6.0
+  solr721:
+    image: solr:7.2.1
     volumes:
       - .:/opt/solr/server/solr
     ports:
-      - 8984:8983
+      - 8983:8983
     working_dir: /opt/solr/server/solr
     command: sh -c "
               ./setupssh.sh

@@ -1,7 +1,7 @@
 # dockerized_solr
 Docker configuration for running solr in a container
 
-# solr 6.6.0
+# solr 7.2.1
 
 Place the solr cores folders in this folder and run `docker-compose up` in this folder to start solr.
 

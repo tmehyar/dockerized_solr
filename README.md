@@ -1,7 +1,7 @@
 # dockerized_solr
 Docker configuration for running solr in a container
 
-# solr 7.5.0
+# solr 8.1.0
 Place the solr cores folders in this folder and run `docker-compose up` in this folder to start solr.
 
 You can edit the docker-compose file to use different port mappings.

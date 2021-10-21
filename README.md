@@ -2,6 +2,7 @@
 Docker configuration for running solr in a container
 
 # solr 7.2.1
+Create the SSH certificates and place them here (.jks and .p12)
 
 Place the solr cores folders in this folder and run `docker-compose up` in this folder to start solr.
 

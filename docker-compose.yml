@@ -8,8 +8,7 @@ services:
     ports:
       - 8983:8983
     working_dir: /opt/solr/server/solr
-    user: root #image created with root user, so had to run it with root to be able to create and move files. But have to start solr with non-root user
-    command: sh -c "runuser solr -c 'solr start -f'"
+    command: sh -c "solr start -f"
     environment:
       SOLR_SSL_ENABLED: "true"
       SOLR_SSL_KEY_STORE: "solr/solr-ssl.keystore.jks"

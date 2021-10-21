@@ -1,17 +1,17 @@
 version: '3.4'
 
 services:
-  solr750:
-    image: solr:7.5.0
+  solr820:
+    image: solr:8.2.0
     volumes:
       - .:/opt/solr/server/solr
     ports:
       - 8983:8983
     working_dir: /opt/solr/server/solr
-    #command: sh -c "./setupssh.sh && solr start -f"
+    user: root #image created with root user, so had to run it with root to be able to create and move files
     command: sh -c "
               ./setupssh.sh
-              && solr start -f;
+              && runuser solr -c 'solr start -f';
             "
     environment:
       SOLR_SSL_ENABLED: "true"
